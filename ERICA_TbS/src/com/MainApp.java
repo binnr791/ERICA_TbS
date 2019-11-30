@@ -16,22 +16,26 @@ public class MainApp {
 	public static final int MAINMENUSCENE = 0;
 	public static final int GAMESCENE = 1;
 	
-	static GFrame application;
-	static Container container;
-	static Scene currentScene;
-	static JPanel currentPanel;
+	GFrame application;
+	Container container;
+	Scene currentScene; //manage panel and etc
+	JPanel currentPanel; //viewed on screen
 	
-	static Scene mainMenuScene = new MainMenuScene();
-	static Scene gameScene = new GameScene();
+	Scene mainMenuScene = new MainMenuScene(this);
+	Scene gameScene = new GameScene(this);
 	
-	static Scene[] sceneSet = new Scene[3];
-	public static void main(String[] args)
+	Scene[] sceneSet = new Scene[3];
+	
+	public MainApp()
 	{
 		application = new GFrame();
-		currentScene = new MainMenuScene();
+		currentScene = new MainMenuScene(this);
 		container = application.getContentPane();
 		currentPanel = currentScene.getPanel();
 		container.add(currentPanel);
+		
+		sceneSet[0] = mainMenuScene;
+		sceneSet[1] = gameScene;
 	}
 	
 	public void setScene(Scene newScene)

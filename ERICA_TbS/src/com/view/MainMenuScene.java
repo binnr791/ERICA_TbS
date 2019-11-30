@@ -1,52 +1,36 @@
 package com.view;
 
-import java.awt.event.MouseEvent;
+import java.awt.event.ActionEvent;
 
 import javax.swing.JButton;
 
+import com.MMButtonController;
+import com.MainApp;
+
 public class MainMenuScene extends Scene
 {
-	//
-	
-	
-	@Override
-	public void mousePressed(MouseEvent arg0) {
-		
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent arg0) {
-		
-	}
-	
-	
-	@Override
-	public void mouseClicked(MouseEvent arg0) {
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent arg0) {
-	}
-
-	@Override
-	public void mouseExited(MouseEvent arg0) {
-	}
-}
-
-abstract class MainMenuButton extends JButton
-{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -6956916840138883768L;
-
-	//
-	public MainMenuButton(String text, Scene scene)
+	// JPanel panel
+	MMButtonController buttonController;
+	public MainMenuScene(MainApp mainApp)
 	{
-		super(text);
-		setSize(100, 40);
-		addMouseListener(scene);
-		setVisible(true);
+		super(mainApp);
+		buttonController = new MMButtonController(mainApp);
+		JButton newGame = buttonController.createNGB();
+		JButton loadGame = buttonController.createLGB();
+		JButton exitGame = buttonController.createEGB();
+		
+		newGame.setLocation(100, 600);
+		loadGame.setLocation(100, 700);
+		exitGame.setLocation(100, 800);
+		
+		panel.add(newGame);
+		panel.add(loadGame);
+		panel.add(exitGame);
+	}
+	@Override
+	public void actionPerformed(ActionEvent e)
+	{
+		
 	}
 }
 
