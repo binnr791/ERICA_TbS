@@ -1,11 +1,23 @@
 package com.view;
 
-import java.awt.event.MouseListener;
+import java.awt.Color;
 
 import javax.swing.JPanel;
 
-public interface Scene extends MouseListener
-{
-	//
+import com.MainApp;
+
+public abstract class Scene {
 	JPanel panel = new JPanel();
+	
+	public Scene()
+	{
+		panel.setBackground(Color.white);
+		panel.setLocation(0, 0);
+		panel.setSize(MainApp.SCREEN_WIDTH, MainApp.SCREEN_HIEGHT);
+		panel.setVisible(true);
+	}
+	public JPanel getPanel()
+	{
+		return panel;
+	}
 }

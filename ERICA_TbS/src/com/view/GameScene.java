@@ -2,7 +2,7 @@ package com.view;
 
 import java.awt.event.MouseEvent;
 
-public class GameScene implements Scene
+public class GameScene extends Scene
 {
 	//
 	@Override
