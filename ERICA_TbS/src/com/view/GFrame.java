@@ -3,6 +3,7 @@ package com.view;
 import javax.swing.JFrame;
 
 public class GFrame extends JFrame{
+	//
 	public GFrame()
 	{
 		setTitle("TbS");

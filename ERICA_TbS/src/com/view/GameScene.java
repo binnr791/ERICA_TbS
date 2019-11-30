@@ -4,7 +4,7 @@ import java.awt.event.MouseEvent;
 
 public class GameScene implements Scene
 {
-
+	//
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub

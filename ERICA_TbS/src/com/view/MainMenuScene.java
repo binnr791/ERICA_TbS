@@ -4,7 +4,7 @@ import java.awt.event.MouseEvent;
 
 public class MainMenuScene implements Scene
 {
-	
+	//
 	
 	@Override
 	public void mousePressed(MouseEvent arg0) {
