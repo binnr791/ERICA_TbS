@@ -11,6 +11,7 @@ public class Unit
 	private int speed;
 	private State state;
 	private int unitClass; // 병과, 직업
+	private Skill[] learnedSkill = new Skill[3];
 	
 	public Unit(int id)
 	{
@@ -41,6 +42,7 @@ public class Unit
 	public State getState() { return this.state; }
 	public int getUnitClass() { return this.unitClass; }
 }
+
 
 class State
 {
