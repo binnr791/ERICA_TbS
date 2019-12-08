@@ -36,11 +36,13 @@ public class Unit
 	
 	public int getMaxHealth() { return this.maxHealth; }
 	public int getCurHealth() { return this.curHealth; }
-	public double getAttack() { return this.attack; }
-	public double getDefense() { return this.defense; }
+	public int getAttack() { return this.attack; }
+	public int getDefense() { return this.defense; }
 	public int getSpeed() { return this.speed; }
 	public State getState() { return this.state; }
 	public int getUnitClass() { return this.unitClass; }
+	
+	public Skill[] getLearnedSkill() { return this.learnedSkill; }
 }
 
 
