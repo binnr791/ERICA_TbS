@@ -13,7 +13,7 @@ public abstract class Skill
 			@Override
 			public int getNeedTarget()
 			{
-				return 0;
+				return SkillConstCollect.MUST_HAVE_TARGET;
 			}
 		}
 		
