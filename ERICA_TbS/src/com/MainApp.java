@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 
 import com.view.GFrame;
 import com.view.GameScene;
-import com.view.Scene;
+import com.view.SceneView;
 import com.view.MainMenuScene;
 
 public class MainApp {
@@ -18,13 +18,13 @@ public class MainApp {
 	
 	GFrame application;
 	Container container;
-	Scene currentScene; //manage panel and etc
+	SceneView currentScene; //manage panel and etc
 	JPanel currentPanel; //viewed on screen
 	
-	Scene mainMenuScene = new MainMenuScene(this);
-	Scene gameScene = new GameScene(this);
+	SceneView mainMenuScene = new MainMenuScene(this);
+	SceneView gameScene = new GameScene(this);
 	
-	Scene[] sceneSet = new Scene[3];
+	SceneView[] sceneSet = new SceneView[3];
 	
 	public MainApp()
 	{
@@ -38,7 +38,7 @@ public class MainApp {
 		sceneSet[1] = gameScene;
 	}
 	
-	public void setScene(Scene newScene)
+	public void setScene(SceneView newScene)
 	{
 		currentScene = newScene;
 		currentPanel = currentScene.getPanel();
@@ -54,7 +54,7 @@ public class MainApp {
 		application.repaint();
 	}
 	
-	public Scene getScene()
+	public SceneView getScene()
 	{
 		return currentScene;
 	}

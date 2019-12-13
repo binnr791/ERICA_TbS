@@ -8,11 +8,11 @@ import javax.swing.JPanel;
 
 import com.MainApp;
 
-public abstract class Scene implements ActionListener{
+public abstract class SceneView implements ActionListener{
 	MainApp mainApp;
 	JPanel panel = new JPanel();
 	
-	public Scene(MainApp mainApp)
+	public SceneView(MainApp mainApp)
 	{
 		this.mainApp = mainApp;
 		panel.setBackground(Color.white);

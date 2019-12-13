@@ -7,7 +7,7 @@ import javax.swing.JButton;
 import com.MMButtonController;
 import com.MainApp;
 
-public class MainMenuScene extends Scene
+public class MainMenuScene extends SceneView
 {
 	// JPanel panel
 	MMButtonController buttonController;

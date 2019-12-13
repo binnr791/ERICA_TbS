@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 
 import com.MainApp;
 
-public class GameScene extends Scene
+public class GameScene extends SceneView
 {
 	public GameScene(MainApp mainApp) {
 		super(mainApp);
