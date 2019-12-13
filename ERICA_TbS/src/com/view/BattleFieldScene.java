@@ -1,5 +1,20 @@
 package com.view;
 
-public class BattleFieldScene {
+import java.awt.event.ActionEvent;
+
+import com.MainApp;
+
+public class BattleFieldScene extends SceneView
+{
+
+	public BattleFieldScene(MainApp mainApp) {
+		super(mainApp);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e)
+	{
+		
+	}
 
 }
