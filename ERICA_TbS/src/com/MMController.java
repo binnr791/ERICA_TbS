@@ -4,11 +4,12 @@ import java.awt.event.ActionEvent;
 
 import com.view.MainMenuButton;
 
-public class MMButtonController {
-	//Main Menu Button Controller
+public class MMController extends SceneController
+{
+	//Main MenuController
 	
 	MainApp mainApp;
-	public MMButtonController(MainApp mainApp)
+	public MMController(MainApp mainApp)
 	{
 		this.mainApp = mainApp;
 	}
@@ -19,6 +20,12 @@ public class MMButtonController {
 	{ return new LoadGameButton("LOAD GAME", mainApp); }
 	public ExitGameButton createEGB()
 	{ return new ExitGameButton("EXIT", mainApp); }
+
+	@Override
+	public void actionPerformed(ActionEvent e)
+	{
+		
+	}
 }
 
 class NewGameButton extends MainMenuButton

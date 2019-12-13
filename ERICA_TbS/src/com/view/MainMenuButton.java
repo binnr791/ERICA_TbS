@@ -17,7 +17,7 @@ abstract public class MainMenuButton extends JButton implements ActionListener
 
 	protected MainApp mainApp;
 	//visual layout for button in main menu
-	public MainMenuButton(String text, MainApp mainApp) 
+	public MainMenuButton(String text, MainApp mainApp)
 	{
 		super(text);
 		this.mainApp = mainApp;
