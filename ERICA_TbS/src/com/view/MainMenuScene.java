@@ -27,10 +27,5 @@ public class MainMenuScene extends SceneView
 		panel.add(loadGame);
 		panel.add(exitGame);
 	}
-	@Override
-	public void actionPerformed(ActionEvent e)
-	{
-		
-	}
 }
 
