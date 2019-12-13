@@ -11,7 +11,7 @@ import com.view.MainMenuScene;
 
 public class MainApp {
 	public static int SCREEN_WIDTH = 1200;
-	public static int SCREEN_HIEGHT = 960;
+	public static int SCREEN_HEIGHT = 960;
 	
 	public static final int MAINMENUSCENE = 0;
 	public static final int GAMESCENE = 1;

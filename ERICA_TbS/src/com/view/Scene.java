@@ -17,7 +17,7 @@ public abstract class Scene implements ActionListener{
 		this.mainApp = mainApp;
 		panel.setBackground(Color.white);
 		panel.setLocation(0, 0);
-		panel.setSize(MainApp.SCREEN_WIDTH, MainApp.SCREEN_HIEGHT);
+		panel.setSize(MainApp.SCREEN_WIDTH, MainApp.SCREEN_HEIGHT);
 		panel.setLayout(null);
 		panel.setVisible(true);
 	}
