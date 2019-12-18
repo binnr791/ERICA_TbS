@@ -3,6 +3,7 @@ package com;
 import java.awt.event.ActionEvent;
 
 import com.view.MainMenuButton;
+import com.view.MainMenuScene;
 
 public class MMController extends SceneController
 {
@@ -12,6 +13,7 @@ public class MMController extends SceneController
 	public MMController(MainApp mainApp)
 	{
 		this.mainApp = mainApp;
+		view = new MainMenuScene(this);
 	}
 	
 	public NewGameButton createNGB()
@@ -42,7 +44,6 @@ class NewGameButton extends MainMenuButton
 	@Override
 	public void actionPerformed(ActionEvent arg0)
 	{
-		mainApp.setScene(1);
 	}
 }
 
@@ -61,7 +62,6 @@ class LoadGameButton extends MainMenuButton
 	@Override
 	public void actionPerformed(ActionEvent arg0)
 	{
-//		mainApp.setScene(2);
 	}
 }
 

@@ -8,14 +8,20 @@ import com.view.SceneView;
 public abstract class SceneController implements ActionListener
 {
 	SceneView view;
-	public SceneController(SceneView view)
+	public SceneController()
 	{
 		
 	}
 	
-	public void draw()
+	public void update()
 	{
+//		model.update();
 //		view.draw();
+	}
+	
+	public SceneView getView()
+	{
+		return view;
 	}
 	
 	public abstract void actionPerformed(ActionEvent e);

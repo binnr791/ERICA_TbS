@@ -10,11 +10,4 @@ public class BattleFieldScene extends SceneView
 	public BattleFieldScene(MainApp mainApp) {
 		super(mainApp);
 	}
-
-	@Override
-	public void actionPerformed(ActionEvent e)
-	{
-		
-	}
-
 }

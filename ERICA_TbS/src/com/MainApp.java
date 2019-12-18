@@ -18,45 +18,32 @@ public class MainApp {
 	
 	GFrame application;
 	Container container;
-	SceneView currentScene; //manage panel and etc
+	SceneController currentController = new MMController(this);; //manage view and model 
+	SceneView currentView = currentController.getView(); //manage panel and etc
 	JPanel currentPanel; //viewed on screen
 	
-	SceneView mainMenuScene = new MainMenuScene(this);
-	SceneView gameScene = new GameScene(this);
-	
-	SceneView[] sceneSet = new SceneView[3];
 	
 	public MainApp()
 	{
 		application = new GFrame();
-		currentScene = new MainMenuScene(this);
 		container = application.getContentPane();
-		currentPanel = currentScene.getPanel();
+		currentPanel = currentView.getPanel();
 		container.add(currentPanel);
 		
-		sceneSet[0] = mainMenuScene;
-		sceneSet[1] = gameScene;
 	}
 	
-	public void setScene(SceneView newScene)
+	public void setScene(SceneController newSceneCn)
 	{
-		currentScene = newScene;
-		currentPanel = currentScene.getPanel();
+		currentController = newSceneCn;
+		currentView = currentController.getView();
+		currentPanel = currentView.getPanel();
 		application.revalidate();
 		application.repaint();
 	}
 	
-	public void setScene(int sceneNum)
+	public SceneController getScene()
 	{
-		currentScene = sceneSet[sceneNum];
-		currentPanel = currentScene.getPanel();
-		application.revalidate();
-		application.repaint();
-	}
-	
-	public SceneView getScene()
-	{
-		return currentScene;
+		return currentController;
 	}
 	//
 }
