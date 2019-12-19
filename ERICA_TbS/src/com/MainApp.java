@@ -5,7 +5,7 @@ import java.awt.Container;
 import javax.swing.JPanel;
 
 import com.view.GFrame;
-import com.view.GameScene;
+import com.view.InGameScene;
 import com.view.SceneView;
 import com.view.MainMenuScene;
 
