@@ -1,5 +1,7 @@
 package com.model;
 
+import java.awt.Image;
+
 public class Unit
 {	
 	private int id;
@@ -10,6 +12,7 @@ public class Unit
 	private int defense;
 	private int speed;
 	private State state;
+	private Image unitImage;
 	private int unitClass; // 병과, 직업
 	private Skill[] learnedSkill = new Skill[3];
 	
@@ -41,7 +44,7 @@ public class Unit
 	public int getSpeed() { return this.speed; }
 	public State getState() { return this.state; }
 	public int getUnitClass() { return this.unitClass; }
-	
+	public Image getImage() { return this.unitImage; }
 	public Skill[] getLearnedSkill() { return this.learnedSkill; }
 }
 

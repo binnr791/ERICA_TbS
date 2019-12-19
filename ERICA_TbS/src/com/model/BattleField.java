@@ -1,17 +1,26 @@
 package com.model;
 
+import java.awt.Image;
+
 public class BattleField
 {
+	public static final int INDEX_ALLY = 0;
+	public static final int INDEX_ENEMY = 1;
+	
 	private int unitNum;
-	FieldUnit ally1, ally2;
-	FieldUnit enemy1, enemy2;
+
+	FieldUnit[][] fieldUnit;
 	
 	public BattleField(Unit allyIn1, Unit allyIn2, Unit enemyIn1, Unit enemyIn2)
 	{
-		ally1 = new FieldUnit(allyIn1, this);
-		ally2 = new FieldUnit(allyIn2, this);
-		enemy1 = new FieldUnit(enemyIn1, this);
-		enemy2 = new FieldUnit(enemyIn2, this);
+		FieldUnit ally1 = new FieldUnit(allyIn1, this);
+		FieldUnit ally2 = new FieldUnit(allyIn2, this);
+		FieldUnit enemy1 = new FieldUnit(enemyIn1, this);
+		FieldUnit enemy2 = new FieldUnit(enemyIn2, this);
+		fieldUnit[INDEX_ALLY][0] = ally1;
+		fieldUnit[INDEX_ALLY][1] = ally2;
+		fieldUnit[INDEX_ENEMY][0] = enemy1;
+		fieldUnit[INDEX_ENEMY][1] = enemy2;
 		
 		this.unitNum = 0;
 		if(ally1 != null)
@@ -29,10 +38,8 @@ public class BattleField
 	{
 		FieldUnit[] order = new FieldUnit[unitNum];
 		// initialize array
-		order[0] = ally1;
-		order[1] = ally2;
-		order[2] = enemy1;
-		order[3] = enemy2;
+		for(int i = 0; i < unitNum; ++i)
+			order[i] = fieldUnit[i / 2][i % 2];
 		
 		// sort unit in array by high speed
 		int speedj, speedj_1;
@@ -57,48 +64,60 @@ public class BattleField
 		
 		return order;
 	}
-}
+	
+	public FieldUnit[][] getFieldUnit()
+	{
+		return this.fieldUnit;
+	}
+	
+//	public int[] getDrawInfo
 
-class FieldUnit
-{
-	BattleField field;
-	Unit unit;
-	private double attackUp = 1;
-	private double defenseUp = 1;
-	private double speedUp = 1;
-	Unit skillTarget = null;
-	
-	public FieldUnit(Unit unit, BattleField field)
+	public class FieldUnit
 	{
-		this.unit = unit;
+		public static final int INDEX_MAX = 0;
+		public static final int INDEX_CUR = 1;
+		
+		BattleField field;
+		Unit unit;
+		private double attackUp = 1;
+		private double defenseUp = 1;
+		private double speedUp = 1;
+		Unit skillTarget = null;
+		
+		public FieldUnit(Unit unit, BattleField field)
+		{
+			this.unit = unit;
+		}
+		
+		public void removeTarget()
+		{
+			this.skillTarget = null;
+		}
+		
+		public void setTarget(Unit target)
+		{
+			this.skillTarget = target;
+		}
+		
+		//////adder suber//////
+		public void addAttackUp(double val) { this.attackUp += val; }
+		public void addDefenseUp(double val) { this.defenseUp += val; }
+		public void addSpeedUp(double val) { this.speedUp += val; }
+		public void subAttackUp(double val) { this.attackUp -= val; }
+		public void subDefenseUp(double val) { this.defenseUp -= val; }
+		public void subSpeedUp(double val) { this.speedUp -= val; }
+		//////geter//////
+		public double getAttackUp() { return this.attackUp; }
+		public double getDefenseUp() { return this.defenseUp; }
+		public double getSpeedUp() { return this.speedUp; }
+		public int getMaxHealth() { return this.unit.getMaxHealth(); }
+		public int getCurHealth() { return this.unit.getCurHealth(); }
+		public int getAttack() { return this.unit.getAttack(); }
+		public int getDefense() { return this.unit.getDefense(); }
+		public int getSpeed() { return this.unit.getSpeed(); }
+		public State getState() { return this.unit.getState(); }
+		public int getUnitClass() { return this.unit.getUnitClass(); }
+		public Image getImage() { return this.unit.getImage(); }
+		public Skill[] getSkillInfo() { return this.unit.getLearnedSkill(); }
 	}
-	
-	public void removeTarget()
-	{
-		this.skillTarget = null;
-	}
-	
-	public void setTarget(Unit target)
-	{
-		this.skillTarget = target;
-	}
-	
-	//////adder suber//////
-	public void addAttackUp(double val) { this.attackUp += val; }
-	public void addDefenseUp(double val) { this.defenseUp += val; }
-	public void addSpeedUp(double val) { this.speedUp += val; }
-	public void subAttackUp(double val) { this.attackUp -= val; }
-	public void subDefenseUp(double val) { this.defenseUp -= val; }
-	public void subSpeedUp(double val) { this.speedUp -= val; }
-	//////geter//////
-	public double getAttackUp() { return this.attackUp; }
-	public double getDefenseUp() { return this.defenseUp; }
-	public double getSpeedUp() { return this.speedUp; }
-	public int getMaxHealth() { return this.unit.getMaxHealth(); }
-	public int getCurHealth() { return this.unit.getCurHealth(); }
-	public int getAttack() { return this.unit.getAttack(); }
-	public int getDefense() { return this.unit.getDefense(); }
-	public int getSpeed() { return this.unit.getSpeed(); }
-	public State getState() { return this.unit.getState(); }
-	public int getUnitClass() { return this.unit.getUnitClass(); }
 }

@@ -2,6 +2,7 @@ package com.model;
 
 public abstract class Skill
 {
+	private String name;
 	private int power;
 	private int manaCnsp; // mana consumption
 	private int sqnc; // sequence
@@ -45,6 +46,10 @@ public abstract class Skill
 	public int getPower()
 	{
 		return this.power;
+	}
+	public String getName()
+	{
+		return this.name;
 	}
 }
 

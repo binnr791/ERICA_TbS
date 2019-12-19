@@ -44,6 +44,7 @@ class NewGameButton extends MainMenuButton
 	@Override
 	public void actionPerformed(ActionEvent arg0)
 	{
+		mainApp.setScene(new InGameController(mainApp));
 	}
 }
 
