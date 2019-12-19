@@ -82,7 +82,7 @@ public class BattleField
 		private double attackUp = 1;
 		private double defenseUp = 1;
 		private double speedUp = 1;
-		Unit skillTarget = null;
+		FieldUnit skillTarget = null;
 		
 		public FieldUnit(Unit unit, BattleField field)
 		{
@@ -94,7 +94,7 @@ public class BattleField
 			this.skillTarget = null;
 		}
 		
-		public void setTarget(Unit target)
+		public void setTarget(FieldUnit target)
 		{
 			this.skillTarget = target;
 		}
