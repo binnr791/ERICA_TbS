@@ -2,7 +2,11 @@ package com.view;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 import com.InGameController;
@@ -29,7 +33,8 @@ public class InGameScene extends SceneView
 		Color blue_top = new Color(20, 20, 200);
 		Color blue_bottom = new Color(25, 40, 170);
 		Color[] statusColor;
-		
+		Image bar;
+
 		public DrawPanel()
 		{
 			statusColor = new Color[4];
@@ -37,6 +42,15 @@ public class InGameScene extends SceneView
 			statusColor[1] = red_bottom;
 			statusColor[2] = blue_top;
 			statusColor[3] = blue_bottom;
+			
+			try
+			{
+				bar = ImageIO.read(new File("src/resource/image/bar.png"));
+			}
+			catch (IOException e)
+			{
+				e.printStackTrace();
+			}
 		}
 	
 		@Override
@@ -82,11 +96,18 @@ public class InGameScene extends SceneView
 						
 						if(u % 2 == 1) // draw right side status bar of unit
 							drawX += SPACE_BETW_UNIT_LR;
-						if(u > 1) // draw down sidestatus bar of unit
+						if(u > 1) // draw down side status bar of unit
 							drawY += SPACE_BETW_UNIT_TB;
 						if(p > 1) // put space between red bar and blue bar
 							drawY += SPACE_UP_DOWN;
 						
+						if(p == 0)
+						{
+							Image tempImg = drawInfo.imgs[u/2][u%2];
+							g.drawImage(drawInfo.imgs[u/2][u%2] , drawX + 100 - tempImg.getWidth(null) / 2,
+									drawY - tempImg.getHeight(null) / 2 - 100, null);
+						}
+						g.drawImage(bar, drawX - 3, drawY - 2, null);
 						g.setColor(statusColor[p]);
 						g.fillRect(drawX, drawY, drawWidth, drawHeight);
 					}

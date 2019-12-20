@@ -35,13 +35,13 @@ public class InGameController extends SceneController
 					if(i == BattleField.INDEX_ALLY) // create ally
 					{
 						Random a = new Random();
-						Unit u = new Unit(a.nextInt(1));
+						Unit u = new Unit(a.nextInt(2));
 						units[i][j] = u;
 					}
 					else // create enemy
 					{
 						Random a = new Random();
-						Unit u = new Unit(a.nextInt(1));
+						Unit u = new Unit(a.nextInt(2));
 						units[i][j] = u;
 					}
 				}
@@ -72,8 +72,8 @@ public class InGameController extends SceneController
 		public Image[][] imgs = new Image[2][2];
 		public int[][][] unitHealth = new int[2][2][2];
 		public int[][][] unitMana = new int[2][2][2];
-		public Skill[][] skills = new Skill[2][3];
-		public String[][] skillInfo = new String[2][3];
+//		public Skill[][] skills = new Skill[2][3];
+//		public String[][] skillInfo = new String[2][3];
 				
 		public DrawInfo()
 		{
@@ -87,9 +87,9 @@ public class InGameController extends SceneController
 						imgs[i][j] = fieldUnit[i][j].getImage();
 						if(i == BattleField.INDEX_ALLY)
 						{
-							skills[i] = fieldUnit[i][j].getSkillInfo();
-							for(int s = 0; s < 3; ++s)
-								skillInfo[i][s] = skills[i][s].getName();
+//							skills[i] = fieldUnit[i][j].getSkillInfo();
+//							for(int s = 0; s < 3; ++s)
+//								skillInfo[i][s] = skills[i][s].getName();
 						}
 						unitHealth[i][j][FieldUnit.INDEX_MAX] = fieldUnit[i][j].getMaxHealth();
 						unitHealth[i][j][FieldUnit.INDEX_CUR] = fieldUnit[i][j].getCurHealth();
@@ -100,8 +100,8 @@ public class InGameController extends SceneController
 					else
 					{
 						imgs[i][j] = null;
-						for(int s = 0; s < 3; ++s)
-							skillInfo[i][s] = null;
+//						for(int s = 0; s < 3; ++s)
+//							skillInfo[i][s] = null;
 						unitHealth[i][j][FieldUnit.INDEX_MAX] = -1;
 						unitHealth[i][j][FieldUnit.INDEX_CUR] = -1;
 					}
