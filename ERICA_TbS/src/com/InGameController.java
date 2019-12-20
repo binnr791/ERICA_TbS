@@ -2,6 +2,8 @@ package com;
 
 import java.awt.Image;
 import java.awt.event.ActionEvent;
+import java.io.IOException;
+import java.util.Random;
 
 import com.model.BattleField;
 import com.model.BattleField.FieldUnit;
@@ -22,7 +24,35 @@ public class InGameController extends SceneController
 	
 	public BattleField createBField(int difficulty)
 	{
-//		BattleField bField = new BattleField(Unit ally1, Unit ally2, Unit mob1, Unit mob2);
+		//test code//
+		Unit[][] units = new Unit[2][2];
+		for(int i = 0; i < 2; ++i)
+		{
+			for(int j = 0; j < 2; ++j)
+			{
+				try
+				{
+					if(i == BattleField.INDEX_ALLY) // create ally
+					{
+						Random a = new Random();
+						Unit u = new Unit(a.nextInt(1));
+						units[i][j] = u;
+					}
+					else // create enemy
+					{
+						Random a = new Random();
+						Unit u = new Unit(a.nextInt(1));
+						units[i][j] = u;
+					}
+				}
+				catch (IOException e)
+				{
+					Unit u = null;
+					e.printStackTrace();
+				}
+			}
+		}
+		BattleField bField = new BattleField(units[0][0], units[0][1], units[1][0], units[1][1]);
 		return bField;
 	}
 	

@@ -9,7 +9,7 @@ public class BattleField
 	
 	private int unitNum;
 
-	FieldUnit[][] fieldUnit;
+	FieldUnit[][] fieldUnit = new FieldUnit[2][2];
 	
 	public BattleField(Unit allyIn1, Unit allyIn2, Unit enemyIn1, Unit enemyIn2)
 	{

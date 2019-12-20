@@ -1,6 +1,10 @@
 package com.model;
 
 import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 public class Unit
 {	
@@ -16,16 +20,46 @@ public class Unit
 	private int unitClass; // 병과, 직업
 	private Skill[] learnedSkill = new Skill[3];
 	
-	public Unit(int id)
+	public Unit(int id) throws IOException
 	{
-//		this.id = unitInfo.id;
-//		this.id = unitInfo.naem;
-//		this.maxHealth = unitInfo.maxHealth;
-//		this.curHealth = maxHealth;
-//		this.attack = unitInfo.attack;
-//		this.defense = unitInfo.defense;
-//		this.speed = unitInfo.speed;
-//		this.unitClass = unitInfo.unitClass;
+		switch(id)
+		{
+			case 0:
+				this.id = id;
+				this.name = "투사";
+				this.maxHealth = 100;
+				this.curHealth = maxHealth;
+				this.attack = 40;
+				this.defense = 60;
+				this.speed = 30;
+				this.unitClass = 0;
+				this.state = null;
+				this.unitImage = ImageIO.read(new File("src/resource/image/shield.png"));
+				break;
+			case 1:
+				this.id = id;
+				this.name = "검사";
+				this.maxHealth = 90;
+				this.curHealth = maxHealth;
+				this.attack = 50;
+				this.defense = 50;
+				this.speed = 40;
+				this.unitClass = 1;
+				this.state = null;
+				this.unitImage = ImageIO.read(new File("src/resource/image/sword.png"));
+				break;
+			default:
+				this.id = id;
+				this.name = "디폴트 유닛";
+				this.maxHealth = 0;
+				this.curHealth = maxHealth;
+				this.attack = 0;
+				this.defense = 0;
+				this.speed = 0;
+				this.unitClass = 0;
+				this.state = null;
+				break;
+		}
 	}
 	
 	public void turnStarted()
@@ -101,3 +135,15 @@ class State
 		this.turnStarted();
 	}
 }
+
+
+
+//this.id = unitInfo.id;
+//this.name = unitInfo.name;
+//this.maxHealth = unitInfo.maxHealth;
+//this.curHealth = maxHealth;
+//this.attack = unitInfo.attack;
+//this.defense = unitInfo.defense;
+//this.speed = unitInfo.speed;
+//this.unitClass = unitInfo.unitClass;
+//this.state = null;
