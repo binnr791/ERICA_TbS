@@ -14,6 +14,7 @@ public class MainMenuScene extends SceneView
 	public MainMenuScene(MMController controller)
 	{
 		super(controller);
+		this.initialize();
 		JButton newGame = controller.createNGB();
 		JButton loadGame = controller.createLGB();
 		JButton exitGame = controller.createEGB();

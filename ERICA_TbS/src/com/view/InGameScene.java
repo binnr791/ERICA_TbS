@@ -16,6 +16,7 @@ public class InGameScene extends SceneView
 		super(controller);
 		this.controller = controller;
 		this.panel = new DrawPanel();
+		this.initialize();
 		// TODO Auto-generated constructor stub
 	}
 	

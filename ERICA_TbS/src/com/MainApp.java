@@ -36,9 +36,11 @@ public class MainApp {
 	{
 		currentController = newSceneCn;
 		currentView = currentController.getView();
+		container.removeAll();
 		currentPanel = currentView.getPanel();
-		application.revalidate();
+		container.add(currentPanel);
 		application.repaint();
+		application.revalidate();
 	}
 	
 	public SceneController getScene()

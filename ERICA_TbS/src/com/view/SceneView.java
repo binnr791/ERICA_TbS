@@ -15,6 +15,15 @@ public abstract class SceneView
 	public SceneView(SceneController controller)
 	{
 		this.controller = controller;
+//		panel.setBackground(Color.white);
+//		panel.setLocation(0, 0);
+//		panel.setSize(MainApp.SCREEN_WIDTH, MainApp.SCREEN_HEIGHT);
+//		panel.setLayout(null);
+//		panel.setVisible(true);
+	}
+	
+	public void initialize()
+	{
 		panel.setBackground(Color.white);
 		panel.setLocation(0, 0);
 		panel.setSize(MainApp.SCREEN_WIDTH, MainApp.SCREEN_HEIGHT);
