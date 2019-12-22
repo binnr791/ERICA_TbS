@@ -11,7 +11,7 @@ public class FontSet
 		
 	private static final int FONT_SIZE_SMALL = 24;
 	private static final int FONT_SIZE_REGULAR = 28;
-	private static final int FONT_SIZE_BIG = 32;
+	private static final int FONT_SIZE_BIG = 44;
 
 	public static Font getBaseSmallFont(){
 		try {
