@@ -12,5 +12,5 @@
 ----------
 1. <code>git clone https://github.com/binnr791/ERICA_TbS.git</code> 를 입력하여 프로젝트의 클론을 다운로드 합니다.</br>
 2. <code>cd ERICA_TbS/ERICA_TbS/src</code> 를 입력하여 프로젝트 내부의 src 폴더로 이동합니다.</br>
-3. <code>javac com/*.java com/view/*.java com/model/*.java</code> 를 입력하여 프로젝트를 컴파일합니다.</br>
+3. <code>javac com/\*.java com/view/\*.java com/model/*.java</code> 를 입력하여 프로젝트를 컴파일합니다.</br>
 4. <code>java com.Main</code>를 입력하여 게임을 실행시킬 수 있습니다.</br>
