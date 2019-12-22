@@ -18,10 +18,46 @@ public abstract class Skill
 			}
 		}
 		
+		public abstract class AllTargetSkill extends AttackSkill
+		{
+			@Override
+			public int getNeedTarget()
+			{
+				return SkillConstCollect.DONT_NEED_TARGET;
+			}
+		}
+		
 		@Override
 		public boolean isAttackSkill()
 		{
 			return true;
+		}
+	}
+	
+	private abstract class SupportSkill extends Skill
+	{
+		public abstract class AllyTargetSkill extends SupportSkill
+		{
+			@Override
+			public int getNeedTarget()
+			{
+				return SkillConstCollect.MUST_HAVE_TARGET;
+			}
+		}
+		
+		public abstract class NoneTargetSkill extends SupportSkill
+		{
+			@Override
+			public int getNeedTarget()
+			{
+				return SkillConstCollect.DONT_NEED_TARGET;
+			}
+		}
+		
+		@Override
+		public boolean isAttackSkill()
+		{
+			return false;
 		}
 	}
 	
